@@ -15,15 +15,46 @@
 @implementation ViewController
 
 - (void)viewDidLoad
+
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+        [super viewDidLoad];
+	   
+    
+    self.webmap = [[AGSWebMap alloc] initWithItemId:@"723060582241474981f0a77a143f1cbe" credential:nil];
+    self.webmap.delegate = self;
+    
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
+
+    - (void)webMapDidLoad:(AGSWebMap *)webmap
+
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+         //open webmap in mapview
+        [self.webmap openIntoMapView:self.mapView];
+    
+    [self.mapView.locationDisplay startDataSource];
+    
+    _mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeNavigation;
+    
+    
+    self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeCompassNavigation ;
+    self.mapView.locationDisplay.navigationPointHeightFactor  = 0.5; //50% along the center line from the bottom edge to the top edge
 }
+
+//gps
+ 
+-(void) mapViewDidLoad:(AGSMapView*)mapView
+
+{
+ 	
+    
+    
+}
+
+
+
 
 @end

@@ -22,6 +22,7 @@
 		139155941999D76600B0D5F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139155731999D76600B0D5F7 /* UIKit.framework */; };
 		1391559C1999D76600B0D5F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1391559A1999D76600B0D5F7 /* InfoPlist.strings */; };
 		1391559E1999D76600B0D5F7 /* webmaptake2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1391559D1999D76600B0D5F7 /* webmaptake2Tests.m */; };
+		139155A81999D88300B0D5F7 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 139155A71999D88300B0D5F7 /* ArcGIS.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		139155991999D76600B0D5F7 /* webmaptake2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "webmaptake2Tests-Info.plist"; sourceTree = "<group>"; };
 		1391559B1999D76600B0D5F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1391559D1999D76600B0D5F7 /* webmaptake2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webmaptake2Tests.m; sourceTree = "<group>"; };
+		139155A71999D88300B0D5F7 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../../../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		139155631999D76600B0D5F7 = {
 			isa = PBXGroup;
 			children = (
+				139155A71999D88300B0D5F7 /* ArcGIS.bundle */,
 				139155751999D76600B0D5F7 /* webmaptake2 */,
 				139155971999D76600B0D5F7 /* webmaptake2Tests */,
 				1391556E1999D76600B0D5F7 /* Frameworks */,
@@ -235,6 +238,7 @@
 				1391558B1999D76600B0D5F7 /* Images.xcassets in Resources */,
 				139155831999D76600B0D5F7 /* Main_iPhone.storyboard in Resources */,
 				1391557A1999D76600B0D5F7 /* InfoPlist.strings in Resources */,
+				139155A81999D88300B0D5F7 /* ArcGIS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,9 +394,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "webmaptake2/webmaptake2-Prefix.pch";
 				INFOPLIST_FILE = "webmaptake2/webmaptake2-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,9 +415,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "webmaptake2/webmaptake2-Prefix.pch";
 				INFOPLIST_FILE = "webmaptake2/webmaptake2-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

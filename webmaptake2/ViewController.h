@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ArcGIS/ArcGIS.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AGSWebMapDelegate>
+@property (retain, nonatomic) IBOutlet AGSMapView *mapView;
+@property (retain, nonatomic) AGSWebMap *webmap;
+@property (nonatomic, strong) IBOutlet UISegmentedControl *autoPanModeControl;
+
+
 
 @end
+
+
+
+
